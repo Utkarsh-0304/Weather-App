@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px white solid; */
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url('../images/europe.jpg'), linear-gradient(to right,rgba(0, 0, 0, 0.65),rgba(41, 40, 40, 0.65),rgba(0, 0, 0, 0.65));
+    background-position: center;
+    background-size: cover;
+    color: white;
+    
+}
+
+.earth{
+    background-image: url('/images/EarthImage(2).jpeg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 20vh;
+}
+
+.head{
+    padding: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+}
+
+.title {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: yellow;
+}
+
+.sub-title{
+    padding: 1rem;
+    font-size: 2.2rem;
+    /* font-weight: 500; */
+}
+
+p{
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.664);
+    font-size: large;
+}
+
+p span{
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 0.1rem 0.5rem;
+}
+
+p span a{
+    color: white;
+    text-decoration: none;
+}
+
+.city{
+    padding: 1rem;
+}
+
+select{
+    width: 40vw;
+    padding: 0.2rem;
+}
+
+img{
+    width: 100%;
+}
+
+footer{
+    color: white;
+    text-align: center;
+}
