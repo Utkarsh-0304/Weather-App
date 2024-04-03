@@ -17,13 +17,13 @@ body {
     
 }
 
-.earth{
+/* .earth{
     background-image: url('/images/EarthImage(2).jpeg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     height: 20vh;
-}
+} */
 
 .head{
     padding: 2rem;
@@ -67,24 +67,33 @@ p span a{
 
 select{
     width: 40vw;
-    padding: 0.2rem;
+    padding: 0.3rem;
+    text-align: start;
 }
 
 img{
     width: 100%;
 }
 
-footer{
-    display: block;
-    color: white;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 50px;
-    right: 50px;
-}
 
 .cloudline{
-    position: fixed;
-    bottom: 40px;
+    
+}
+
+.hidden{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+    gap: 10px;
+    height: 200px;
+    width: 100%;
+    flex-flow: wrap;
+}
+
+.item{
+    background-color: rgba(0, 0, 0, 0.666);
+    width: 150px;
+    height: 100%;
+    /* margin: 0.5rem; */
 }
