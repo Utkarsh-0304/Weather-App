@@ -1,13 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* border: 1px white solid; */
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Roboto;
 }
 
 body {
-    background-image: url('../images/europe.jpg'), linear-gradient(to right,rgba(0, 0, 0, 0.65),rgba(41, 40, 40, 0.65),rgba(0, 0, 0, 0.65));
+    background-image: linear-gradient(to right,rgb(1, 1, 211),rgb(0, 136, 255),rgb(1, 1, 211));
     background-position: center;
     background-size: cover;
     color: white;
@@ -50,7 +53,7 @@ p{
 p span{
     border: 1px solid white;
     border-radius: 3px;
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.3rem;
 }
 
 p span a{
@@ -72,6 +75,16 @@ img{
 }
 
 footer{
+    display: block;
     color: white;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 50px;
+    right: 50px;
+}
+
+.cloudline{
+    position: fixed;
+    bottom: 40px;
 }
