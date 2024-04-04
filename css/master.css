@@ -66,18 +66,16 @@ p span a{
 }
 
 select{
-    width: 40vw;
+    width: 30vw;
     padding: 0.3rem;
     text-align: start;
+    font-size: medium;
+    word-wrap: normal;
+    overflow: auto;
 }
 
 img{
     width: 100%;
-}
-
-
-.cloudline{
-    
 }
 
 .hidden{
@@ -94,6 +92,29 @@ img{
 .item{
     background-color: rgba(0, 0, 0, 0.666);
     width: 150px;
-    height: 100%;
+    height: auto
     /* margin: 0.5rem; */
+}
+
+.upper {
+    height: auto;
+    background-color: rgba(0, 204, 255, 0.827);
+    padding: 0.5rem;
+}
+
+.timeData {
+    padding: 0.2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px black;
+    color: yellow;
+    padding-bottom: 0.4rem ;
+}
+
+
+
+.text {
+    text-wrap: wrap;
+    color: white;
 }
