@@ -115,6 +115,10 @@ img{
 
 
 .text {
+    font-weight: 500;
+    font-size: small;
     text-wrap: wrap;
     color: white;
+    text-align: center;
+    padding: 1rem;
 }
