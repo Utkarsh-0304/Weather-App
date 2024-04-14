@@ -1,4 +1,5 @@
-
+document.addEventListener("DOMContentLoaded", function() {
+    
 const apiUrl = "https://www.7timer.info/bin/civil.php?lon=4.904&lat=52.367&ac=0&unit=metric&output=json&tzshift=0";
 
 async function checkWeather() {
@@ -47,10 +48,15 @@ async function checkWeather() {
         if(event.target.value !== 0) {
             appear.style.display = "block"
         }
+        // const minMaxData = document.querySelectorAll(".minMax");
+        // console.log(minMaxData);
     });
     
-    const text = document.querySelectorAll(".text");
+    const text = document.querySelectorAll(".text p");
+    
     const img = document.querySelectorAll("img");
+
+
     for (let i = 0; i < 7; i++) {
         if(data.dataseries[i].weather === "clearday" || data.dataseries[i].weather === "clearnight") {
             img[i].src = "images/clear.png";
@@ -126,7 +132,67 @@ async function checkWeather() {
             text[i].innerHTML = "WINDY";
         }   
     }
+    // console.log(data.dataseries.length);
+
+//     const maxTemp = [];
+//     const minTemp = []; 
+    
+//     for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
+//         let max = 0;
+//         for (let j = i; j < i + 8; j++) {
+//             if( data.dataseries[j].temp2m > max) {
+//                 max = data.dataseries[j].temp2m;
+//             }
+//        }
+//        maxTemp.push(max);
+//        let min = max;
+//        for (let j = i; j < i + 8; j++) {
+//         if( data.dataseries[j].temp2m < min) {
+//             min = data.dataseries[j].temp2m;
+//         }
+//        }
+//        minTemp.push(min);
+//     }
+//     console.log(maxTemp);
+//     console.log(minTemp);
+
+const maxTemp = [];
+const minTemp = []; 
+
+for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
+    let max = -Infinity;
+    let min = Infinity;
+    for (let j = i; j < i + 8; j++) {
+        const temperature = data.dataseries[j].temp2m;
+        if (temperature > max) {
+            max = temperature;
+        }
+        if (temperature < min) {
+            min = temperature;
+        }
+    }
+    maxTemp.push(max);
+    minTemp.push(min);
+}
+
+    console.log(maxTemp);
+    console.log(minTemp);
+
+    
+    text.forEach(element => {
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("class", "minMax");
+        element.appendChild(newDiv);
+    });
+    // console.log(newDiv);
+    // console.log(text[3]);
+    const minMax = document.querySelectorAll(".minMax");
+    // console.log(minMax[0]);
+
+    for (let i = 0; i < 7; i++) {
+        minMax[i].innerHTML = `HI: ${maxTemp[i]} <br> LO: ${minTemp[i]}`;
+    }
 }
 
 checkWeather();
-
+});
