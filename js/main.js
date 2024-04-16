@@ -56,7 +56,6 @@ async function checkWeather() {
     
     const img = document.querySelectorAll("img");
 
-
     for (let i = 0; i < 7; i++) {
         if(data.dataseries[i].weather === "clearday" || data.dataseries[i].weather === "clearnight") {
             img[i].src = "images/clear.png";
@@ -132,7 +131,6 @@ async function checkWeather() {
             text[i].innerHTML = "WINDY";
         }   
     }
-    // console.log(data.dataseries.length);
 
 //     const maxTemp = [];
 //     const minTemp = []; 
