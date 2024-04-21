@@ -176,8 +176,10 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
     console.log(maxTemp);
     console.log(minTemp);
 
+    const items = document.querySelectorAll(".item");
+    console.log(items);
     
-    text.forEach(element => {
+    items.forEach(element => {
         const newDiv = document.createElement("div");
         newDiv.setAttribute("class", "minMax");
         element.appendChild(newDiv);

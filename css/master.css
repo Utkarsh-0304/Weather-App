@@ -11,12 +11,13 @@
 
 body {
     height: 100vh;
-    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.28),rgba(79, 72, 72, 0.24), rgba(0, 0, 0, 0.314)), url('/images/India.jpg');
-    /* to right,rgb(1, 1, 211),rgb(0, 136, 255),rgb(1, 1, 211) */
-    background-position: center;
+    background-image: linear-gradient(to right,rgb(1, 1, 211),rgb(0, 136, 255),rgb(1, 1, 211));
+    /* (to right,rgba(0, 0, 0, 0.28),rgba(79, 72, 72, 0.24), rgba(0, 0, 0, 0.314)), url('/images/India.jpg'); */
+    /* background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     color: white;
+    /* margin: 3rem; */
 }
 
 /* .earth{
@@ -68,7 +69,7 @@ p span a{
 }
 
 select{
-    width: 30vw;
+    width: 40vw;
     padding: 0.3rem;
     text-align: start;
     font-size: medium;
@@ -78,34 +79,42 @@ select{
 
 /* .appear {
     border: 1px solid red;
-    height: 50vh;
 } */
 
 .hidden{
     /* border: 2px black solid; */
     display:flex;
     align-items: center;
-    justify-content: space-evenly;
-    /* flex-direction: row; */
-    gap: 10px;
-    height: auto;
-    width: 100%;
+    justify-content: center;
+    /* gap: 10px; */
     flex-flow: wrap;
-    margin: 1rem;
-
+    overflow: auto;
 }
 
 .item{
     background-color: rgba(0, 0, 0, 0.666);
-    width: 150px;
-    height: auto
-    /* margin: 0.5rem; */
+    margin: 0.5rem;
+    flex: 1;
+    flex-basis: calc(20% - 30px); /* Adjust the width based on the number of items you have */
+    max-width: 300px; /* Optional: Set a maximum width for each item */
 }
 
+/* .item {
+    background-color: rgba(0, 0, 0, 0.666);
+    width: calc(33.33% - 20px);
+    max-width: 300px; 
+    margin: 10px; 
+} */
+
+
 .upper {
-    height: auto;
+    height: 50%;
     background-color: rgba(0, 204, 255, 0.827);
     padding: 0.5rem;
+}
+
+.lower {
+    height: 50%;
 }
 
 .timeData {
@@ -115,7 +124,8 @@ select{
     font-weight: 700;
     text-shadow: 1px 1px 3px black;
     color: yellow;
-    padding-bottom: 0.4rem ;
+    padding-bottom: 0.6rem ;
+    width: 100%;
 }
 
 
@@ -123,21 +133,29 @@ select{
 .text p{
     font-weight: 500;
     font-size: small;
-    text-wrap: wrap;
+    white-space: nowrap; /*Prevents text from wrapping*/
+    overflow: hidden; /*Hides any overflowed content*/
+    text-overflow: ellipsis; /*Displays ellipsis (...) when text overflows*/
     color: white;
     text-align: center;
-    padding: 1rem;
+    /* padding: 1rem; */
+    /* border: 2px solid orange; */
+    height: 75%;
 }
 
 .minMax {
+    text-align: center;
     padding-top: 1rem;
-    font-size: larger;
+    font-size: small;
+    padding-bottom: 0.5rem;
     font-weight: bold;
     color: rgb(193, 188, 188);
+    height: 25%;
+    /* border: 2px solid red; */
 }
 
 footer {
-    padding: 1rem;
+    /* padding: 1rem; */
     text-align: center;
     font-size: 1rem;
     font-weight: 400;
@@ -146,12 +164,29 @@ footer {
     /* margin-top: 5rem; */
 }
 
-img {
-    margin-bottom: 1rem;
-    margin-right: auto;
-    margin-left: auto;
+footer div {
+    margin-top: 2rem;
+    /* margin-bottom: 3rem; */
+    /* border:2px solid white; */
+    color: rgba(255, 255, 255, 0.698);
+    padding-bottom: 5rem;
+}
+
+.cloudline{
+    margin-left:auto ;
+    margin-right:auto ;
     display: block;
     width: 100%;
+    transform:scale(0.8);
     height: auto;
-    transform: scale(0.8);
 }
+
+img:not(.cloudline) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
