@@ -88,29 +88,34 @@ select{
     justify-content: center;
     /* gap: 10px; */
     flex-flow: wrap;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .item{
     background-color: rgba(0, 0, 0, 0.666);
     margin: 0.5rem;
-    flex: 1;
-    flex-basis: calc(20% - 30px); /* Adjust the width based on the number of items you have */
-    max-width: 300px; /* Optional: Set a maximum width for each item */
+    /* border-radius: 15px; */
+    /* flex: 1; */
+    /* flex-basis: calc(20% - 30px);  */
+    /* Adjust the width based on the number of items you have */
+    /* max-width: 500px;  */
+    /* Optional: Set a maximum width for each item */
 }
 
 /* .item {
     background-color: rgba(0, 0, 0, 0.666);
     width: calc(33.33% - 20px);
     max-width: 300px; 
+
     margin: 10px; 
 } */
-
 
 .upper {
     height: 50%;
     background-color: rgba(0, 204, 255, 0.827);
     padding: 0.5rem;
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
 }
 
 .lower {
@@ -173,11 +178,12 @@ footer div {
 }
 
 .cloudline{
+    margin-top: 3rem;
     margin-left:auto ;
     margin-right:auto ;
     display: block;
     width: 100%;
-    transform:scale(0.8);
+    /* transform:scale(0.8); */
     height: auto;
 }
 
@@ -189,4 +195,7 @@ img:not(.cloudline) {
     margin-left: auto;
 }
 
-
+.container{
+    /* background-color: rgba(129, 83, 235, 0.921); */
+    /* height: 1.8rem; */
+}

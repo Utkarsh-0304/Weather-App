@@ -1,8 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-const apiUrl = "https://www.7timer.info/bin/civil.php?lon=4.904&lat=52.367&ac=0&unit=metric&output=json&tzshift=0";
+  var apiUrl;
+  const selectElement = document.getElementById('drop-down');
+  const appear = document.querySelector(".appear");
+  appear.style.display = "none";
+  
+  selectElement.addEventListener('change', function(e) {
+      var value = JSON.parse(this.value);
+      console.log(value);
+      apiUrl = `https://www.7timer.info/bin/civil.php?lon=${value.lon}&lat=${value['lat']}&ac=0&unit=metric&output=json&tzshift=0`;
+      console.log(apiUrl);
+      appear.style.display = "block"
+      checkWeather();
+ });
+
 
 async function checkWeather() {
+
+    if(!apiUrl) {
+        return;
+    }
+
+    // appear.innerHTML = '<p>Loading...</p>'; 
+    // appear.style.display = "block";
+
+
     const response = await fetch(apiUrl);
     var data = await response.json();
 
@@ -37,20 +57,9 @@ async function checkWeather() {
     }
     setData();
 
-    const appear = document.querySelector(".appear");
-    appear.style.display = "none";
-
-    const selectElement = document.getElementById('drop-down');
-
-        
-    selectElement.addEventListener('input', function(event) {
-        const selectValue = selectElement.value;
-        if(event.target.value !== 0) {
-            appear.style.display = "block"
-        }
-        // const minMaxData = document.querySelectorAll(".minMax");
-        // console.log(minMaxData);
-    });
+    // selectElement.addEventListener('change', function() {
+    //     console.log(this.value);
+    // });
     
     const text = document.querySelectorAll(".text p");
     
@@ -180,19 +189,22 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
     console.log(items);
     
     items.forEach(element => {
+        const existingMinMax = element.querySelector(".minMax");
+        if (existingMinMax) {
+            existingMinMax.remove(); // Remove existing minMax element if it exists
+        }
         const newDiv = document.createElement("div");
         newDiv.setAttribute("class", "minMax");
         element.appendChild(newDiv);
     });
-    // console.log(newDiv);
-    // console.log(text[3]);
+
     const minMax = document.querySelectorAll(".minMax");
-    // console.log(minMax[0]);
+
 
     for (let i = 0; i < 7; i++) {
         minMax[i].innerHTML = `HI: ${maxTemp[i]} <br> LO: ${minTemp[i]}`;
     }
-}
 
-checkWeather();
-});
+    // appear.innerHTML = '';
+    // appear.style.display = "none";
+}
