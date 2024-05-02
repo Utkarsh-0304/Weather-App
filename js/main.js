@@ -8,7 +8,8 @@
       console.log(value);
       apiUrl = `https://www.7timer.info/bin/civil.php?lon=${value.lon}&lat=${value['lat']}&ac=0&unit=metric&output=json&tzshift=0`;
       console.log(apiUrl);
-      appear.style.display = "block"
+      showLoader();
+      
       checkWeather();
  });
 
@@ -19,14 +20,14 @@ async function checkWeather() {
         return;
     }
 
-    // appear.innerHTML = '<p>Loading...</p>'; 
-    // appear.style.display = "block";
-
-
     const response = await fetch(apiUrl);
     var data = await response.json();
 
     console.log(data);
+
+    hideLoader();
+
+    appear.style.display = "block";
 
     const today = new Date();
     
@@ -207,4 +208,14 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
 
     // appear.innerHTML = '';
     // appear.style.display = "none";
+}
+
+function showLoader() {
+    const loader = document.querySelector(".loader");
+    loader.classList.remove("loader-hidden"); // Show loader
+}
+
+function hideLoader() {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loader-hidden"); // Hide loader
 }
