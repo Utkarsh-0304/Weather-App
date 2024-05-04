@@ -66,81 +66,6 @@ async function checkWeather() {
     
     const img = document.querySelectorAll("img");
 
-    for (let i = 0; i < 7; i++) {
-        if(data.dataseries[i].weather === "clearday" || data.dataseries[i].weather === "clearnight") {
-            img[i].src = "images/clear.png";
-            text[i].innerHTML = "CLEAR";
-        }
-
-        else if(data.dataseries[i].weather === "pcloudyday" || data.dataseries[i].weather === "pcloudynight") {
-            img[i].src = "images/pcloudy.png";
-            text[i].innerHTML = "PARTLY CLOUDY";
-        }
-        
-        else if(data.dataseries[i].weather === "mcloudyday" || data.dataseries[i].weather === "mcloudynight") {
-            img[i].src = "images/mcloudy.png";
-            text[i].innerHTML = "CLOUDY";
-        }
-        
-        else if(data.dataseries[i].weather === "cloudyday" || data.dataseries[i].weather === "cloudynight") {
-            img[i].src = "images/cloudy.png";
-            text[i].innerHTML = "VERY CLOUDY";
-        }
-        
-        else if(data.dataseries[i].weather === "humidday" || data.dataseries[i].weather === "humidnight") {
-            img[i].src = "images/humid.png";
-            text[i].innerHTML = "FOGGY";
-        }
-        
-        else if(data.dataseries[i].weather === "lightrainday" || data.dataseries[i].weather === "lightrainnight") {
-            img[i].src = "images/lightrain.png";
-            text[i].innerHTML = "SHOWERS";
-        }
-        
-        else if(data.dataseries[i].weather === "oshowerday" || data.dataseries[i].weather === "oshowernight") {
-            img[i].src = "images/oshower.png";
-            text[i].innerHTML = "OCCASIONAL SHOWERS";
-        }
-        
-        else if(data.dataseries[i].weather === "ishowerday" || data.dataseries[i].weather === "ishowernight") {
-            img[i].src = "images/ishower.png";
-            text[i].innerHTML = "ISOLATED SHOWERS";
-        }
-        
-        else if(data.dataseries[i].weather === "lightsnowday" || data.dataseries[i].weather === "lightsnownight") {
-            img[i].src = "images/lightsnow.png";
-            text[i].innerHTML = "LIGHT SNOW";
-        }
-        
-        else if(data.dataseries[i].weather === "rainday" || data.dataseries[i].weather === "rainnight") {
-            img[i].src = "images/rain.png";
-            text[i].innerHTML = "RAIN";
-        }
-        
-        else if(data.dataseries[i].weather === "snowday" || data.dataseries[i].weather === "snownight") {
-            img[i].src = "images/snow.png";
-            text[i].innerHTML = "SNOW";
-        }
-        
-        else if(data.dataseries[i].weather === "rainsnowday" || data.dataseries[i].weather === "rainsnownight") {
-            img[i].src = "images/rainsnow.png";
-            text[i].innerHTML = "MIXED";
-        }
-        
-        else if(data.dataseries[i].weather === "tsday" || data.dataseries[i].weather === "tsnight") {
-            img[i].src = "images/tsrain.png";
-            text[i].innerHTML = "THUNDERSTORM POSSIBLE";
-        }
-        
-        else if(data.dataseries[i].weather === "tsrainday" || data.dataseries[i].weather === "tsrainnight") {
-            img[i].src = "images/tstorm.png";
-            text[i].innerHTML = "THUNDERSTORM";
-        }
-        else {
-            img[i].src = "images/windy.png";
-            text[i].innerHTML = "WINDY";
-        }   
-    }
 
 //     const maxTemp = [];
 //     const minTemp = []; 
@@ -208,6 +133,90 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
 
     // appear.innerHTML = '';
     // appear.style.display = "none";
+    
+    const weatherMap = new Map();
+    let k = 0;
+    for (let i = 0; i < data.dataseries.length && k < 7; i = i + 8) {
+        for (let j = i; j < i + 7; j++) {
+            // console.log(data.dataseries[j].weather);
+            weatherMap.set(data.dataseries[j].weather, 
+                (weatherMap.get(data.dataseries[j].weather) || 0) + 1);
+        }
+        let maxCountWord = "";
+        let max = 0;
+        for (const [word, count] of weatherMap.entries()) {
+            if (count > max) {
+                max = count;
+                maxCountWord = word;
+            }
+        }
+        console.log(max);
+        console.log(maxCountWord);
+        const commonPart = maxCountWord.replace('day', '').replace('night', '');
+
+        switch(commonPart) {
+            case 'clear':
+                img[k].src = "images/clear.png";
+                text[k].innerHTML = "CLEAR";
+                break;
+            case 'pcloudy':
+                img[k].src = "images/pcloudy.png";
+                text[k].innerHTML = "PARTLY CLOUDY";
+                break;
+            case 'mcloudy':
+                img[k].src = "images/mcloudy.png";
+                text[k].innerHTML = "CLOUDY";
+                break;
+            case 'cloudy':
+                img[k].src = "images/cloudy.png";
+                text[k].innerHTML = "VERY CLOUDY";
+                break;
+            case 'humid':
+                img[k].src = "images/humid.png";
+                text[k].innerHTML = "FOGGY";
+                break;
+            case 'lightrain':
+                img[k].src = "images/lightrain.png";
+                text[k].innerHTML = "LIGHT RAIN";
+                break;
+            case 'oshower':
+                img[k].src = "images/oshower.png";
+                text[k].innerHTML = "OCCASIONAL SHOWERS";
+            case 'ishower':
+                img[k].src = "images/ishower.png";
+                text[k].innerHTML = "ISOLATED SHOWERS";
+                break;
+            case 'lightsnow':
+                img[k].src = "images/lightsnow.png";
+                text[k].innerHTML = "LIGHT SNOW";
+                break;
+            case 'rain':
+                img[k].src = "images/rain.png";
+                text[k].innerHTML = "RAIN";
+                break;
+            case ('snow'):
+                img[k].src = "images/snow.png";
+                text[k].innerHTML = "SNOW";
+                break;
+            case 'rainsnow':
+                img[k].src = "images/rainsnow.png";
+                text[k].innerHTML = "MIXED";
+                break;
+            case 'ts':
+                img[k].src = "images/tsrain.png";
+                text[k].innerHTML = "THUNDERSTORM POSSIBLE";
+                break;
+            case 'tsrain':
+                img[k].src = "images/tstorm.png";
+                text[k].innerHTML = "THUNDERSTORM";
+                break;
+            default:
+                img[k].src = "images/windy.png";
+                text[k].innerHTML = "WINDY";
+                break;
+        }
+        k++;
+    }
 }
 
 function showLoader() {
