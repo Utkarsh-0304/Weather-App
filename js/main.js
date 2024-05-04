@@ -65,6 +65,7 @@ async function checkWeather() {
     const text = document.querySelectorAll(".text p");
     
     const img = document.querySelectorAll("img");
+    console.log(img);
 
 
 //     const maxTemp = [];
@@ -137,13 +138,20 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
     const weatherMap = new Map();
     let k = 0;
     for (let i = 0; i < data.dataseries.length && k < 7; i = i + 8) {
-        for (let j = i; j < i + 7; j++) {
-            // console.log(data.dataseries[j].weather);
-            weatherMap.set(data.dataseries[j].weather, 
-                (weatherMap.get(data.dataseries[j].weather) || 0) + 1);
+        weatherMap.clear();
+        for (let j = i; j < i + 8; j++) {
+            const weather = data.dataseries[j].weather;
+            const cleanWeather = weather.replace('day', '').replace('night', '');
+            console.log(cleanWeather);
+            weatherMap.set(cleanWeather, 
+                (weatherMap.get(cleanWeather) || 0) + 1);
         }
+            
+        console.log(weatherMap);
+
         let maxCountWord = "";
         let max = 0;
+        
         for (const [word, count] of weatherMap.entries()) {
             if (count > max) {
                 max = count;
@@ -152,9 +160,8 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
         }
         console.log(max);
         console.log(maxCountWord);
-        const commonPart = maxCountWord.replace('day', '').replace('night', '');
 
-        switch(commonPart) {
+        switch(maxCountWord) {
             case 'clear':
                 img[k].src = "images/clear.png";
                 text[k].innerHTML = "CLEAR";
@@ -182,6 +189,7 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
             case 'oshower':
                 img[k].src = "images/oshower.png";
                 text[k].innerHTML = "OCCASIONAL SHOWERS";
+                break;
             case 'ishower':
                 img[k].src = "images/ishower.png";
                 text[k].innerHTML = "ISOLATED SHOWERS";
@@ -215,8 +223,8 @@ for (let i = 0; i < data.dataseries.length - 8; i = i + 8) {
                 text[k].innerHTML = "WINDY";
                 break;
         }
-        k++;
-    }
+    k++;
+}
 }
 
 function showLoader() {
