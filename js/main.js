@@ -9,10 +9,41 @@
       apiUrl = `https://www.7timer.info/bin/civil.php?lon=${value.lon}&lat=${value['lat']}&ac=0&unit=metric&output=json&tzshift=0`;
       console.log(apiUrl);
       showLoader();
-      
       checkWeather();
  });
 
+
+ const csvFilePath = 'city_coordinates.csv';
+
+ fetch(csvFilePath)
+     .then(response => response.text())
+     .then(data => {
+         const cities = parseCSV(data);
+         populateDropdown(cities);
+     })
+     .catch(error => {
+         console.error('Error fetching city coordinates:', error);
+     });
+
+ function parseCSV(data) {
+     const lines = data.split('\n');
+     const cities = [];
+
+     for (let i = 1; i < lines.length; i++) {
+         const [latitude, longitude, city, country] = lines[i].split(',');
+         cities.push({ latitude, longitude, city, country });
+     }
+     return cities;
+ }
+
+ function populateDropdown(cities) {
+     cities.forEach(city => {
+         const option = document.createElement('option');
+         option.value = `{"lat": ${city.latitude},"lon": ${city.longitude}}`;
+         option.textContent = `${city.city}, ${city.country}`;
+         selectElement.appendChild(option);
+     });
+ }
 
 async function checkWeather() {
 
