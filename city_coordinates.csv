@@ -1,57 +1,51 @@
-latitude,longitude,city,country
-52.367,4.904,Amsterdam,Netherlands
-39.933,32.859,Ankara,Turkey
-56.134,12.945,Åstorp,Sweden
-37.983,23.727,Athens,Greece
-54.597,-5.930,Belfast,Northern Ireland
-41.387,2.168,Barcelona,Spain
-52.520,13.405,Berlin,Germany
-46.948,7.447,Bern,Switzerland
-43.263,-2.935,Bilbao,Spain
-50.847,4.357,Brussels,Belgium
-47.497,19.040,Bucharest,Romania
-59.329,18.068,Budapest,Hungary
-51.483,-3.168,Cardiff,Wales
-50.937,6.96,Cologne,Germany
-55.676,12.568,Copenhagen,Denmark
-51.898,-8.475,Cork,Ireland
-53.349,-6.260,Dublin,Ireland
-55.953,-3.188,Edinburgh,Scotland
-43.7696,11.255,Florence,Italy
-50.110,8.682,Frankfurt,Germany        
-43.254,6.637,French Riviera,France
-32.650,-16.908,Funchal,Portugual
-36.140,-5.353,Gibraltar
-57.708,11.974,Gothenburg,Sweden     
-53.548,9.987,Hamburg,Germany
-60.169,24.938,Helsinki,Finland
-39.020,1.482,Ibiza,Spain
-50.450,30.523,Kyiv,Ukraine
-61.115,10.466,Lillehammer,Norway
-38.722,-9.139,Lisbon,Portugual
-51.507,-0.127,London,England      
-40.416,-3.703,Madrid,Spain
-39.695,3.017,Mallorca,Spain
-53.480,-2.242,Manchester,England       
-43.296,5.369,Marseille,France
-27.760,-15.586,Maspalomas,Spain
-45.464,9.190,Milan,Italy
-48.135,11.582,Munich,Germany
-40.851,14.268,Naples,Italy
-43.034,-2.417,Oñati,Spain
-59.913,10.752,Oslo,Norway
-48.856,2.352,Paris,France
-50.075,14.437,Prague,Czech Republic
-64.146,-21.942,Reykjavík,Iceland
-56.879,24.603,Riga,Latvia
-41.902,12.496,Rome,Italy
-39.453,-31.127,Santa Cruz das Flores,Portugual
-28.463,-16.251,Santa Cruz de Tenerife,Spain
-57.273,-6.215,Skye,Scotland
-42.697,23.321,Sofia,Bulgaria
-59.329,18.068,Stockholm,Sweden
-59.437,24.753,Tallinn,Estonia
-18.208,16.373,Vienna,Austria
-52.229,21.012,Warsaw,Poland
-53.961,-1.07,York,England
-47.376,8.541,Zurich,Switzerland
+Latitude,Longitude,City,State
+23.8964954,71.6246531,Kolapur,Maharashtra
+23.0216238,72.5797068,Ahmedabad,Gujarat
+12.7948109,79.0006410968549,Vellore,Tamil Nadu
+27.1752554,78.0098161,Agra,Uttar Pradesh
+20.4686,85.8792,Cuttack,Odisha
+26.1805978,91.753943,Guwahati,Assam
+22.5726723,88.3638815,Kolkata,West Bengal
+27.87698975,78.13729027600994,Aligarh,Uttar Pradesh
+9.833333,77.833333,Madurai,Tamil Nadu
+21.2379469,81.6336833,Raipur,Chattisgarh
+8.5241122,76.9360573,Thiruvananthapuram,Kerela
+25.531031149999997,78.65268901605349Jhansi,Uttar Pradesh
+30.2090874,76.3398720856221,Patiala,Punjab
+17.7231276,83.3012842,Visakhapatnam,Andhra Pradesh
+25.1968256,76.00089330885552,Kota,Rajasthan
+26.916194,75.820349,Jaipur,Rajasthan
+32.7185614,74.8580917,Jammu,J&K
+15.3004543,74.0855134,Goa
+13.0801721,80.2838331,Chennai,Tamil Nadu
+25.3356491,83.0076292,Varanasi,Uttar Pradesh
+22.2973142,73.1942567,Vadodara,Gujarat
+22.8015194,86.2029579,Jamshedpur,Jharkand
+19.877263,75.3390241,Aurangabad,Maharashtra
+23.1608938,79.9497702,Jabalpur,Madhya Pradesh
+34.1642029,77.5848133,Leh,Ladakh
+23.2232877,72.6492267,Gandhinagar,Gujarat
+27.02801615,70.7785056232077,Jaisalmer,Rajasthan
+30.7194022,76.7646552,Chandigarh
+17.38878595,78.46106473453146,Hyderabad,Telengana
+20.0112475,73.7902364,Nashik,Maharashtra
+23.3700354,85.3250132,Ranchi,Jharkand
+18.521428,73.8544541,Pune,Maharashtra
+26.2967719,73.0351433,Jodhpur,Rajasthan
+22.7203616,75.8681996,Indore,Madhya Pradesh
+20.84351185,75.52592658756026,Jalgaon,Maharashtra
+19.17257215,77.29141237169956,Nanded,Maharashtra
+27.329046,88.6122673,Gangtok,Sikkim
+23.2584857,77.401989,Bhopal,Madhya Pradesh
+25.6093239,85.1235252,Patna,Bihar
+34.0747444,74.8204443,Srinagar,J&K
+28.6273928,77.1716954,Delhi,India
+26.2037247,78.1573628,Gwalior,Madhya Pradesh
+17.84990665,75.27632027348457,Solapur,Maharashtra
+12.9791198,77.5912997,Bangalore,Karnataka
+28.0159286,73.3171367,Bikaner,Rajasthan
+28.711241,77.4445372,Ghaziabad,Uttar Pradesh
+22.3051991,70.8028335,Rajkot,Gujarat
+26.8381,80.9346001,Lucknow,Uttar Pradesh
+22.2471009,68.9742446,Dwarka,Gujarat
+18.9387711,72.8353355,Mumbai,Maharashtra

@@ -30,8 +30,8 @@
      const cities = [];
 
      for (let i = 1; i < lines.length; i++) {
-         const [latitude, longitude, city, country] = lines[i].split(',');
-         cities.push({ latitude, longitude, city, country });
+         const [latitude, longitude, city, state] = lines[i].split(',');
+         cities.push({ latitude, longitude, city, state });
      }
      return cities;
  }
@@ -40,7 +40,7 @@
      cities.forEach(city => {
          const option = document.createElement('option');
          option.value = `{"lat": ${city.latitude},"lon": ${city.longitude}}`;
-         option.textContent = `${city.city}, ${city.country}`;
+         option.textContent = `${city.city}, ${city.state}`;
          selectElement.appendChild(option);
      });
  }
