@@ -2,6 +2,8 @@
   const selectElement = document.getElementById('drop-down');
   const appear = document.querySelector(".appear");
   appear.style.display = "none";
+  let cities = [];
+//   const body = document.querySelector("body");
   
   selectElement.addEventListener('change', function(e) {
       var value = JSON.parse(this.value);
@@ -12,13 +14,12 @@
       checkWeather();
  });
 
-
  const csvFilePath = 'city_coordinates.csv';
 
  fetch(csvFilePath)
      .then(response => response.text())
      .then(data => {
-         const cities = parseCSV(data);
+         cities = parseCSV(data);
          populateDropdown(cities);
      })
      .catch(error => {
@@ -27,12 +28,13 @@
 
  function parseCSV(data) {
      const lines = data.split('\n');
-     const cities = [];
+     
 
      for (let i = 1; i < lines.length; i++) {
          const [latitude, longitude, city, state] = lines[i].split(',');
          cities.push({ latitude, longitude, city, state });
      }
+     console.log(cities);
      return cities;
  }
 

@@ -9,13 +9,19 @@
     font-family: Roboto;
 }
 
+
+/* html {
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    filter: brightness(0.7);
+} */
+
 body {
     height: 100vh;
     background-image: linear-gradient(to right,rgb(1, 1, 211),rgb(0, 136, 255),rgb(1, 1, 211));
     /* (to right,rgba(0, 0, 0, 0.28),rgba(79, 72, 72, 0.24), rgba(0, 0, 0, 0.314)), url('/images/India.jpg'); */
-    /* background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
     color: white;
     /* margin: 3rem; */
 }
@@ -69,6 +75,7 @@ p span a{
 }
 
 select{
+    border-radius: 5px;
     width: 40vw;
     padding: 0.3rem;
     text-align: start;
@@ -127,11 +134,16 @@ select{
 .item{
     background-color: rgba(0, 0, 0, 0.666);
     margin: 0.5rem;
-    /* border-radius: 15px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+    border-radius: 15px;
     /* flex: 1; */
     /* flex-basis: calc(20% - 30px);  */
     /* Adjust the width based on the number of items you have */
-    /* max-width: 500px;  */
+    max-width: 200px; 
+    height: 300px;
     /* Optional: Set a maximum width for each item */
 }
 
@@ -148,8 +160,8 @@ select{
     height: 50%;
     background-color: rgba(0, 204, 255, 0.827);
     padding: 0.5rem;
-    /* border-top-left-radius: 15px;
-    border-top-right-radius: 15px; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .lower {
@@ -159,7 +171,7 @@ select{
 .timeData {
     padding: 0.2rem;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-shadow: 1px 1px 3px black;
     color: yellow;
@@ -171,25 +183,31 @@ select{
 
 .text p{
     font-weight: 500;
-    font-size: small;
-    white-space: nowrap; /*Prevents text from wrapping*/
+    font-size: medium;
+    word-wrap: break-word;
     overflow: hidden; /*Hides any overflowed content*/
     text-overflow: ellipsis; /*Displays ellipsis (...) when text overflows*/
     color: white;
     text-align: center;
     /* padding: 1rem; */
     /* border: 2px solid orange; */
-    height: 75%;
+    height: 50%;
+    width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .minMax {
-    text-align: center;
-    padding-top: 1rem;
-    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+    /* padding-top: 1rem; */
+    font-size: 1rem;
     padding-bottom: 0.5rem;
     font-weight: bold;
     color: rgb(193, 188, 188);
-    height: 25%;
+    height: 50%;
     /* border: 2px solid red; */
 }
 
